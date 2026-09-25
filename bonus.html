@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casino Alpha · Bonus e promozioni — Wireframe</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="./index.html"><span class="logo-mark"></span><span>Casino Alpha</span></a>
+      <nav class="main-nav">
+        <a href="./index.html">Home</a>
+        <a href="./app.html">App</a>
+        <a class="active" href="./bonus.html">Bonus</a>
+        <a href="./codice-promozionale.html">Codice promozionale</a>
+        <a href="./bonus-senza-deposito.html">Bonus senza deposito</a>
+        <a href="./gioco-responsabile.html">Gioco responsabile</a>
+        <a href="./termini-e-condizioni.html">Termini</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-ghost btn-sm" href="#">Registrati</a>
+        <a class="btn btn-primary btn-sm" href="#">Accedi</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page active" data-screen-label="Bonus e promozioni">
+    <main class="container">
+
+      <div class="hero">
+        <div class="hero-panel">
+          <div class="hero-content">
+            <span class="badge badge-accent">Guida informativa</span>
+            <h1>Bonus e promozioni: come funzionano le offerte</h1>
+            <p class="hero-sub">Analisi delle promozioni pubblicate dall'operatore: meccaniche, requisiti di puntata,
+              scadenze e passaggi per il riscatto, senza semplificazioni.</p>
+            <div class="hero-actions">
+              <a class="btn btn-ghost" href="#riscatto">Come si riscatta un bonus</a>
+            </div>
+          </div>
+          <div class="ph ph-square">bonus-gift-abstract · 1024×1024 · regalo astratto neon</div>
+        </div>
+      </div>
+
+      <section class="section" id="panoramica">
+        <div class="section-head">
+          <h2>Panoramica delle promozioni attive</h2>
+        </div>
+        <p>Le offerte attive sono raggruppate per tipologia. Ogni scheda riassume la meccanica e rimanda al regolamento
+          completo: importi, requisiti e scadenze possono variare nel tempo.</p>
+        <div class="card-grid cols-3">
+          <div class="bonus-box">
+            <span class="badge badge-accent">Benvenuto</span>
+            <span class="bonus-title">Bonus primo deposito</span>
+            <p class="bonus-terms">Percentuale sul primo versamento, accreditata come saldo bonus separato.</p>
+            <div class="bonus-foot"><a class="section-link" href="#benvenuto">Dettagli</a></div>
+          </div>
+          <div class="bonus-box">
+            <span class="badge badge-accent">Free spin</span>
+            <span class="bonus-title">Giri gratuiti</span>
+            <p class="bonus-terms">Assegnati su slot selezionate, con valore per giro e scadenza definiti.</p>
+            <div class="bonus-foot"><a class="section-link" href="#giri">Dettagli</a></div>
+          </div>
+          <div class="bonus-box bonus-purple">
+            <span class="badge badge-purple">Cashback</span>
+            <span class="bonus-title">Rimborso settimanale</span>
+            <p class="bonus-terms">Percentuale sulle perdite nette del periodo, entro un massimale.</p>
+            <div class="bonus-foot"><a class="section-link" href="#cashback">Dettagli</a></div>
+          </div>
+        </div>
+        <div class="info-panel" style="margin-top:16px"><strong>Nota:</strong> questa pagina è informativa e riflette
+          le condizioni reali pubblicate dall'operatore. Prima di aderire, consulta il regolamento aggiornato sul sito
+          ufficiale.</div>
+      </section>
+
+      <section class="section" id="benvenuto">
+        <div class="section-head">
+          <h2>Bonus di benvenuto sul primo deposito</h2>
+        </div>
+        <div class="card-grid cols-2">
+          <div>
+            <p>Il bonus di benvenuto viene accreditato dopo il primo deposito idoneo e resta separato dal saldo reale
+              fino al completamento del requisito di puntata. Importo minimo del deposito, percentuale e massimale sono
+              indicati nel regolamento.</p>
+            <ul class="checklist">
+              <li>Deposito minimo richiesto per l'attivazione.</li>
+              <li>Saldo bonus distinto dal saldo prelevabile.</li>
+              <li>Contribuzione dei giochi differenziata per categoria.</li>
+            </ul>
+          </div>
+          <div class="rules-box">
+            <ul>
+              <li><strong>Requisito di puntata:</strong> moltiplicatore sull'importo bonus (es. ×35).</li>
+              <li><strong>Validità:</strong> periodo limitato dalla data di accredito.</li>
+              <li><strong>Puntata massima:</strong> tetto per giocata durante il rigioco.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="giri">
+        <div class="section-head">
+          <h2>Giri gratuiti: condizioni e giochi idonei</h2>
+        </div>
+        <p>I giri gratuiti hanno un valore unitario fisso e sono utilizzabili solo sulle slot indicate dall'offerta.
+          Le vincite generate confluiscono nel saldo bonus e seguono il requisito di puntata della promozione.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Elemento</th>
+                <th>Condizione tipo</th>
+                <th>Dove verificarla</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tier-name">Valore per giro</td>
+                <td>Importo fisso per spin</td>
+                <td>Regolamento dell'offerta</td>
+              </tr>
+              <tr>
+                <td class="tier-name">Slot idonee</td>
+                <td>Elenco chiuso di titoli</td>
+                <td>Pagina promozioni del conto</td>
+              </tr>
+              <tr>
+                <td class="tier-name">Scadenza</td>
+                <td>Giorni dall'accredito</td>
+                <td>Dettaglio promozione</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="cashback">
+        <div class="section-head">
+          <h2>Cashback settimanale: calcolo e limiti</h2>
+        </div>
+        <p>Il cashback è calcolato sulle perdite nette del periodo di riferimento, applicando la percentuale prevista
+          dal livello del giocatore ed entro il massimale indicato. L'accredito avviene di norma come saldo bonus con
+          requisito di conversione ridotto.</p>
+        <div class="rules-box">
+          <ul>
+            <li><strong>Base di calcolo:</strong> perdite nette, non il volume puntato.</li>
+            <li><strong>Massimale:</strong> importo massimo accreditabile per periodo.</li>
+            <li><strong>Conversione:</strong> requisito di puntata dedicato, indicato nel regolamento.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="requisiti">
+        <div class="section-head">
+          <h2>Requisiti di puntata e termini in breve</h2>
+        </div>
+        <div class="rules-box">
+          <ul>
+            <li><strong>Requisito di puntata:</strong> volume di gioco da completare prima del prelievo del bonus.</li>
+            <li><strong>Contribuzione:</strong> slot di norma al 100%, tavoli e live in percentuale ridotta.</li>
+            <li><strong>Scadenza:</strong> i bonus non completati entro il termine vengono annullati.</li>
+            <li><strong>Un'offerta per conto:</strong> salvo diversa indicazione del regolamento.</li>
+            <li><strong>Verifica del conto:</strong> necessaria prima di qualsiasi prelievo.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="riscatto">
+        <div class="section-head">
+          <h2>Come riscattare un bonus passo dopo passo</h2>
+        </div>
+        <ol class="steps">
+          <li><strong>Leggi il regolamento</strong>
+            <p>Controlla requisito di puntata, giochi idonei, puntata massima e scadenza dell'offerta.</p>
+          </li>
+          <li><strong>Attiva l'offerta</strong>
+            <p>Aderisci dalla sezione promozioni del conto ed effettua, se richiesto, il deposito idoneo.</p>
+          </li>
+          <li><strong>Completa il rigioco</strong>
+            <p>Monitora l'avanzamento del requisito dal conto: al completamento il saldo bonus diventa prelevabile.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-head">
+          <h2>Domande frequenti sui bonus</h2>
+        </div>
+        <details>
+          <summary>Posso prelevare il bonus appena accreditato?</summary>
+          <div class="details-body">No: il saldo bonus diventa prelevabile solo dopo il completamento del requisito di
+            puntata previsto dall'offerta.</div>
+        </details>
+        <details>
+          <summary>Tutti i giochi contribuiscono al rigioco?</summary>
+          <div class="details-body">No, la contribuzione varia per categoria: le slot di norma contano al 100%, tavoli
+            e live dealer in misura ridotta o nulla.</div>
+        </details>
+        <details>
+          <summary>Cosa succede se l'offerta scade?</summary>
+          <div class="details-body">Il saldo bonus residuo e le eventuali vincite collegate vengono annullati secondo
+            quanto previsto dal regolamento.</div>
+        </details>
+      </section>
+
+    </main>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div>
+          <h4>Pagine</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./bonus.html">Bonus</a></li>
+            <li><a href="./codice-promozionale.html">Codice promozionale</a></li>
+            <li><a href="./bonus-senza-deposito.html">Bonus senza deposito</a></li>
+            <li><a href="./app.html">App mobile</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Informazioni</h4>
+          <ul>
+            <li><a href="#">Chi siamo</a></li>
+            <li><a href="./termini-e-condizioni.html">Termini e condizioni</a></li>
+            <li><a href="./informativa-sulla-privacy.html">Informativa sulla privacy</a></li>
+            <li><a href="./politica-sui-cookie.html">Politica sui cookie</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Assistenza</h4>
+          <ul>
+            <li><a href="#">Contatti</a></li>
+            <li><a href="#">Domande frequenti</a></li>
+            <li><a href="#">Reclami</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Gioco responsabile</h4>
+          <ul>
+            <li><a href="./gioco-responsabile.html">Strumenti e limiti</a></li>
+            <li><a href="#">giocaresponsabile.it (placeholder)</a></li>
+            <li><a href="#">Registro Unico Autoesclusi (RUA)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="compliance-strip">
+        <span>Il gioco è vietato ai minori di 18 anni e può causare dipendenza patologica.</span>
+        <span>Informazioni operative · Casino Alpha</span>
+        <a href="#">giocaresponsabile.it — link placeholder</a>
+      </div>
+      <p class="footer-disclaimer">Sito informativo indipendente di tipo affiliativo: i contenuti descrivono le
+        condizioni pubblicate dall.operatore e non costituiscono incitamento al gioco.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
