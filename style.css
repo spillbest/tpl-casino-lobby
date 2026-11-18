@@ -1,0 +1,682 @@
+/* ==========================================================================
+   casino-lobby — dark single-brand casino lobby (Italian ADM market)
+   Design system implementing the reference palette/typography/layout.
+   Informational tone: subdued CTAs, no urgency styling, no winner feeds.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* palette (observed) */
+  --bg: #0b0b0b;
+  --surface: #1a1a1a;
+  --surface-2: #211e1f;
+  --header-bg: #000000;
+  --text: #ffffff;
+  --text-2: #ebebeb;
+  --muted: #a3a3a8;
+  --accent: #c03a6a;
+  --accent-dark: #85284a;
+  --accent-soft: rgba(192, 58, 106, 0.14);
+  --purple: #542797;
+  --purple-soft: rgba(84, 39, 151, 0.18);
+  --success: #15cb5e;
+  --border: rgba(220, 223, 228, 0.14);
+  --border-soft: rgba(217, 221, 224, 0.08);
+
+  /* typography */
+  --font-sans: 'Poppins', 'Plus Jakarta Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+
+  /* spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --container: 1140px;
+  --shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.85);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1100px 500px at 85% -120px, rgba(84, 39, 151, 0.16), transparent 65%),
+    radial-gradient(900px 420px at 0% -80px, rgba(192, 58, 106, 0.12), transparent 60%),
+    var(--bg);
+  color: var(--text-2);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+
+h1 {
+  font-size: clamp(30px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0 0 var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(22px, 3vw, 27px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+  margin: 0 0 var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 var(--space-2);
+}
+
+p { margin: 0 0 var(--space-4); color: var(--text-2); }
+
+a { color: var(--accent); text-decoration: none; transition: color 0.15s ease; }
+a:hover { color: var(--text); }
+
+.muted { color: var(--muted); font-size: 14px; }
+
+.kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+
+/* promo codes — monospace pill */
+.promo-code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons — subdued, informational (Decreto Dignità: no aggressive CTAs)
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+.btn-primary:hover { background: var(--accent-dark); color: #ffffff; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-2);
+  border-color: var(--border);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--text); }
+
+.btn-sm { padding: 7px 16px; font-size: 13px; }
+
+/* --------------------------------------------------------------------------
+   Badges
+   -------------------------------------------------------------------------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  background: var(--surface-2);
+}
+
+.badge-accent { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.badge-purple { border-color: var(--purple); color: #b79ae6; background: var(--purple-soft); }
+
+
+.badge-online::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+}
+
+/* --------------------------------------------------------------------------
+   Header — sticky black bar, logo left, nav + actions right
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  min-height: 64px;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.logo .logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--purple));
+  flex-shrink: 0;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.main-nav::-webkit-scrollbar { display: none; }
+
+.main-nav a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.main-nav a:hover { color: var(--text); }
+.main-nav a.active { color: var(--text); border-bottom-color: var(--accent); }
+
+.header-actions { display: flex; align-items: center; gap: var(--space-3); flex-shrink: 0; }
+
+/* --------------------------------------------------------------------------
+   Hero — dark banner, headline left, neutral CTA
+   -------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  margin: var(--space-6) 0 var(--space-7);
+}
+
+.page .container {
+  padding-bottom: var(--space-7);
+}
+
+.hero-panel {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background:
+    linear-gradient(100deg, rgba(11, 11, 11, 0.94) 0%, rgba(11, 11, 11, 0.55) 55%, rgba(84, 39, 151, 0.28) 100%),
+    var(--surface-2);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow);
+  padding: var(--space-7) var(--space-6);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero-content .badge { margin-bottom: var(--space-4); }
+.hero-content h1 { margin-bottom: var(--space-3); }
+.hero-content .hero-sub { color: var(--text-2); max-width: 52ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* --------------------------------------------------------------------------
+   Sections & cards
+   -------------------------------------------------------------------------- */
+
+.section { margin: var(--space-8) 0; }
+
+.page[data-screen-label="App mobile"] .section {
+  margin: var(--space-8) 0 var(--space-8);
+  scroll-margin-top: 96px;
+}
+
+.page[data-screen-label="App mobile"] .section:last-of-type {
+  margin-bottom: var(--space-8);
+}
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.section-head h2 { margin: 0; }
+.section-link { font-size: 13px; font-weight: 600; white-space: nowrap; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+}
+
+.card-grid { display: grid; gap: var(--space-4); }
+.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* --------------------------------------------------------------------------
+   Placeholder image blocks
+   -------------------------------------------------------------------------- */
+
+.ph {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 0 12px, transparent 12px 24px),
+    var(--surface-2);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  min-height: 120px;
+  padding: var(--space-3);
+}
+
+.ph-wide { min-height: 240px; }
+.ph-square { aspect-ratio: 1 / 1; min-height: 0; }
+.ph-tall { aspect-ratio: 2 / 3; min-height: 0; }
+
+/* --------------------------------------------------------------------------
+   Game carousel rows
+   -------------------------------------------------------------------------- */
+
+.game-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 172px;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding-bottom: var(--space-3);
+  scroll-snap-type: x proximity;
+}
+
+.game-row::-webkit-scrollbar { height: 8px; }
+.game-row::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 999px; }
+
+.game-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.game-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.game-card .ph { border: none; border-radius: 0; min-height: 0; aspect-ratio: 1 / 1; }
+
+.game-card .game-meta { padding: var(--space-2) var(--space-3) var(--space-3); }
+.game-card .game-name { font-size: 13px; font-weight: 600; color: var(--text); display: block; }
+.game-card .game-provider { font-size: 11px; color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   Numbered step lists (registration / login / app install)
+   -------------------------------------------------------------------------- */
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.steps li {
+  counter-increment: step;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  position: relative;
+}
+
+.steps li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: var(--space-3);
+}
+
+.steps li strong { display: block; color: var(--text); margin-bottom: var(--space-1); }
+.steps li p { margin: 0; font-size: 14px; color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   Bonus boxes — offer summary + terms link, no urgency
+   -------------------------------------------------------------------------- */
+
+.bonus-box {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.bonus-box.bonus-purple { border-left-color: var(--purple); }
+
+.bonus-box .bonus-title { font-size: 17px; font-weight: 700; color: var(--text); }
+.bonus-box .bonus-terms { font-size: 13px; color: var(--muted); }
+.bonus-box .bonus-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Rules summary box — "Le regole più importanti in breve"
+   -------------------------------------------------------------------------- */
+
+.rules-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: var(--space-5) var(--space-6);
+}
+
+.rules-box ul { margin: 0; padding-left: var(--space-5); }
+.rules-box li { margin-bottom: var(--space-2); color: var(--text-2); }
+.rules-box li strong { color: var(--text); }
+
+/* --------------------------------------------------------------------------
+   Tables — VIP tiers, comparisons
+   -------------------------------------------------------------------------- */
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--border-soft); border-radius: var(--radius); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  font-size: 14px;
+}
+
+thead th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--surface-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+tbody td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-2);
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: rgba(255, 255, 255, 0.02); }
+td.tier-name { font-weight: 600; color: var(--text); }
+
+/* --------------------------------------------------------------------------
+   Checklists — checkmark icons
+   -------------------------------------------------------------------------- */
+
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+
+.checklist li {
+  position: relative;
+  padding-left: 34px;
+  color: var(--text-2);
+}
+
+.checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(21, 203, 94, 0.14);
+  color: var(--success);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Collapsibles — ToC and FAQ accordions
+   -------------------------------------------------------------------------- */
+
+details {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+}
+
+details summary {
+  cursor: pointer;
+  padding: var(--space-4) var(--space-5);
+  font-weight: 600;
+  color: var(--text);
+  list-style: none;
+  position: relative;
+  padding-right: var(--space-7);
+}
+
+details summary::-webkit-details-marker { display: none; }
+
+details summary::after {
+  content: '+';
+  position: absolute;
+  right: var(--space-5);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+details[open] summary::after { content: '−'; }
+
+details .details-body { padding: 0 var(--space-5) var(--space-4); color: var(--text-2); font-size: 14px; }
+
+.toc details { background: var(--surface-2); }
+.toc ol { margin: 0; padding-left: var(--space-5); columns: 2; column-gap: var(--space-6); }
+.toc li { margin-bottom: var(--space-2); font-size: 14px; }
+
+/* --------------------------------------------------------------------------
+   Informational panels (compliance-safe replacement of winners feed/timers)
+   -------------------------------------------------------------------------- */
+
+.info-panel {
+  background: var(--purple-soft);
+  border: 1px solid rgba(84, 39, 151, 0.45);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.info-panel strong { color: var(--text); }
+
+.notice-rg {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   Footer — full-width black, link columns + compliance strip
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  background: var(--header-bg);
+  border-top: 1px solid var(--border-soft);
+  margin-top: var(--space-8);
+  padding: var(--space-7) 0 var(--space-5);
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.footer-cols h4 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 var(--space-3);
+}
+
+.footer-cols ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.footer-cols a { color: var(--text-2); font-size: 14px; }
+.footer-cols a:hover { color: var(--accent); }
+
+.compliance-strip {
+  border-top: 1px solid var(--border-soft);
+  padding-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.compliance-strip a { color: var(--text-2); text-decoration: underline; }
+
+.footer-disclaimer {
+  margin-top: var(--space-4);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — single breakpoint
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .container { padding: 0 var(--space-4); }
+
+  .hero-panel { grid-template-columns: 1fr; padding: var(--space-5); }
+
+  .cols-2, .cols-3, .cols-4 { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .toc ol { columns: 1; }
+  .footer-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-row { grid-auto-columns: 140px; }
+  .section { margin: var(--space-7) 0; }
+}
